@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Custom Page{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/utils/GetCountryFlagUrl.js') }}"></script>
+    <script src="{{ asset('js/UsersTableDataGridComponent.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Filtering by name" id="filterInput"
+                           aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="filterButton">Filter</button>
+                </div>
+                <table class="table table-striped">
+                    <thead class="table-light">
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
